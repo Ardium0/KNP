@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNP</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+
+            font-family: 'Segoe UI';
+        }
+
+        .buttonMain {
+            color: white;
+            border-style: ridge;
+            border-color: rgb(20, 20, 20);
+
+            background-color: transparent;
+            border-width: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            transition: 0.3s;
+        }
+
+        .buttonMain:hover {
+            box-shadow: 2px 2px 2px rgb(30, 30, 30);
+
+            background-color: rgb(60, 60, 60);
+            color: white;
+        }
+
+        .buttonMain:active {
+            box-shadow: 2px 2px 2px rgb(35, 35, 35);
+
+            background-color: rgb(70, 70, 70);
+            color: white;
+        }
+
+        .text {
+            color: white; font-size: 20px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">Kámen nůžky papír</p>
+
+    <button class="buttonMain" onclick="
+        let randomNumber = Math.random()
+        let computerMove = '';
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+            computerMove = 'kámen';
+        }   else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+            computerMove = 'papír';
+        }   else if (randomNumber > 2 / 3 && randomNumber < 1) {
+            computerMove = 'nůžky';
+        }
+
+
+        let result = '';
+
+        if (computerMove === 'kámen') {
+            result = 'Remízoval si.';
+        } else if (computerMove === 'papír') {
+            result = 'Prohrál si.';
+        } else if (computerMove === 'nůžky') {
+            result = 'Vyhrál si.';
+        }
+        
+        document.getElementById('resultText').textContent = `Vybral jsi kámen. Počítač vybral ${computerMove}. ${result}`
+    ">Kámen</button>
+
+    <button class="buttonMain" onclick="
+        let randomNumber = Math.random()
+        let computerMove = '';
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+            computerMove = 'kámen';
+        }   else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+            computerMove = 'papír';
+        }   else if (randomNumber > 2 / 3 && randomNumber < 1) {
+            computerMove = 'nůžky';
+        }
+
+
+        let result = '';
+
+        if (computerMove === 'kámen') {
+            result = 'Prohrál si.';
+        } else if (computerMove === 'papír') {
+            result = 'Vyhrál si.';
+        } else if (computerMove === 'nůžky') {
+            result = 'Remízoval si.';
+        }
+
+        document.getElementById('resultText').textContent = `Vybral jsi nůžky. Počítač vybral ${computerMove}. ${result}`
+    ">Nůžky</button>
+
+    <button class="buttonMain" onclick="
+        let randomNumber = Math.random()
+        let computerMove = '';
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+            computerMove = 'kámen';
+        }   else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+            computerMove = 'papír';
+        }   else if (randomNumber > 2 / 3 && randomNumber < 1) {
+            computerMove = 'nůžky';
+        }
+
+
+        let result = '';
+
+        if (computerMove === 'kámen') {
+            result = 'Vyhrál si.';
+        } else if (computerMove === 'papír') {
+            result = 'Remízoval si.';
+        } else if (computerMove === 'nůžky') {
+            result = 'Prohrál si.';
+        }
+
+        document.getElementById('resultText').textContent = `Vybral jsi papír. Počítač vybral ${computerMove}. ${result}`
+    ">Papír</button> <br> <br> <br>
+
+    <p style="color: white; font-size: 15px;" id="resultText"></p>
+</body>
+</html>
